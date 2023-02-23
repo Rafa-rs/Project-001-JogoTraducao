@@ -1,0 +1,43 @@
+
+<div class="container">
+    <div class="fundo">
+        <div class="row">
+            <div class="col-sm-6 block-inline">
+                <app-progresso [progressoFilho]= "progressoPai"></app-progresso>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="d-flex justify-content-end">
+                    <!---->
+                    <app-tentativas [tentativas]= "tentativas"></app-tentativas>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+                <h6>{{instrucao}}</h6>
+                <p>{{ rodadaFrase.fraseEng }}</p>
+
+                <label for="area-frase" class="form-label"></label>
+                <textarea 
+                    class="form-control" 
+                    id="area-frase" 
+                    rows="3"
+                    (input)='atualizaResposta($event)'
+                    [value]="resposta"
+                ></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-end">
+                    <button 
+                    type="button" 
+                    class="btn btn-primary"
+                    (click)="verificarResposta()"
+                    >Verificar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
